@@ -129,7 +129,7 @@ button:hover {
 /* ? Link */
 /* ? ----------------------- */
 .link {
-	position: absolute;
+	position: relative;
 }
 
 .link-options {
@@ -143,9 +143,14 @@ button:hover {
 	font-style: italic;
 }
 
+#addedCategories {
+	margin-bottom: 15px;
+}
+
 .category {
 	font-weight: bold;
 	padding: 5px;
+	margin: 0 2px;
 	border: 1px solid var(--main-accent);
 	border-radius: 5px;
 	font-size: 10px;
