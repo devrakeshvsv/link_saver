@@ -5,6 +5,7 @@ const cancelButton = document.querySelector("#cancelButton");
 const addLinkPanel = document.querySelector("#addLinkPanel");
 const linksList = document.querySelector("#linksList");
 const addedCategories = document.querySelector("#addedCategories");
+const addLinkContainer = document.querySelector("#addLinkContainer");
 
 let editIndex = -1;
 
@@ -35,17 +36,18 @@ addBtn.addEventListener("click", (event) => {
 });
 
 cancelButton.addEventListener("click", (event) => {
+	event.preventDefault();
 	hideFormPanel();
-	clearLinkForm();
 });
 
 function showFormPanel() {
-	addLinkPanel.classList.remove("hidden");
+	addLinkContainer.classList.remove("hidden");
 	displayLinkCategories();
 }
 
 function hideFormPanel() {
-	addLinkPanel.classList.add("hidden");
+	addLinkContainer.classList.add("hidden");
+	clearLinkForm();
 }
 
 linkCategory.addEventListener("keydown", (event) => {

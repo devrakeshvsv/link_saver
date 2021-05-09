@@ -49,6 +49,17 @@ a:hover {
 	margin-bottom: 10px;
 	color: var(--main-grey);
 }
+
+.full-screen-opaque {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.85);
+	z-index: 5;
+}
+
 /* ? ----------------------- */
 /* ? Navbar */
 /* ? ----------------------- */
@@ -121,6 +132,16 @@ a:hover {
 	padding: 5px 15px;
 	font-size: 14px;
 	color: var(--main-grey);
+}
+
+#addLinkContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#addLinkContainer.hidden {
+	display: none;
 }
 
 /* ? ----------------------- */
