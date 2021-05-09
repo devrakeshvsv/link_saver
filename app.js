@@ -113,21 +113,23 @@ function displayLinks() {
 	let index = 0;
 	for (let link of links) {
 		let linkHTMLString = `
-      <div class="link panel">
-        <div class="link-options">
-          <button class="btn-sm" onclick="deleteLink(${index})">Delete</button>
-          <button class="btn-sm" onclick="editLink(${index})">Edit</button>
-        </div>
-        <a href="${link.url}">
-          <h1 class="header">${link.title}</h1>
-        </a>
-        <p class="link-date">${Date.now()}</p>
-        <div class="categories">
-          Categories:`;
+      <div class="flex-item">
+        <div class="link panel">
+          <div class="link-options">
+            <button class="btn-sm" onclick="deleteLink(${index})">Delete</button>
+            <button class="btn-sm" onclick="editLink(${index})">Edit</button>
+          </div>
+          <a href="${link.url}">
+            <h1 class="header">${link.title}</h1>
+          </a>
+          <p class="link-date">${Date.now()}</p>
+          <div class="categories">
+            Categories:`;
 		for (let category of link.categories) {
 			linkHTMLString += `<span class="category">${category}</span>`;
 		}
 		linkHTMLString += `
+          </div>
         </div>
       </div>`;
 		linksList.innerHTML += linkHTMLString;
