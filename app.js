@@ -12,19 +12,22 @@ let editIndex = -1;
 let linkCategories = [];
 let links = [
 	{
-		title: "New Link 1",
-		url: "url.com1",
-		categories: ["node", "angular"],
+		title: "Wes Bos Courses",
+		url: "http://wesbos.com/courses/",
+		categories: ["Node", "ES6", "Flexbox", "React"],
+		date: new Date(),
 	},
 	{
-		title: "New Link 2",
-		url: "url.com2",
-		categories: ["js", "angular"],
+		title: "Traversy Media",
+		url: "https://www.youtube.com/user/TechGuyWeb",
+		categories: ["Node", "CSS", "JavaScript", "Angular"],
+		date: new Date(),
 	},
 	{
-		title: "New Link 3",
-		url: "url.com3",
-		categories: ["node", "bootstrap"],
+		title: "Colt Steele",
+		url: "http://www.udemy.com/user/coltsteele/",
+		categories: ["Node", "JavaScript", "React", "MEAN", "Mongo"],
+		date: new Date(),
 	},
 ];
 
@@ -89,6 +92,7 @@ submitButton.addEventListener("click", (event) => {
 		title,
 		url,
 		categories,
+		date: new Date(),
 	};
 
 	if (editIndex === -1) {
@@ -124,7 +128,7 @@ function displayLinks() {
           <a href="${link.url}">
             <h1 class="header">${link.title}</h1>
           </a>
-          <p class="link-date">${Date.now()}</p>
+          <p class="link-date">${formatDate(link.date)}</p>
           <div class="categories">
             Categories:`;
 		for (let category of link.categories) {
@@ -155,4 +159,8 @@ function editLink(index) {
 	linkCategories = links[index].categories;
 
 	showFormPanel();
+}
+
+function formatDate(date) {
+	return `On ${("0" + date.getDate()).slice(-2)} / ${("0" + (date.getMonth() + 1)).slice(-2)} / ${date.getFullYear()}  at ${("0" + date.getHours()).slice(-2)} : ${("0" + date.getMinutes()).slice(-2)} : ${("0" + date.getSeconds()).slice(-2)}`;
 }
