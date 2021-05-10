@@ -144,6 +144,10 @@ a:hover {
 	display: none;
 }
 
+#addLinkPanel {
+	animation: slide-down 1s 0s ease-in;
+}
+
 /* ? ----------------------- */
 /* ? Buttons */
 /* ? ----------------------- */
@@ -220,5 +224,24 @@ button:hover {
 @media only screen and (min-width: 1281px) {
 	.flex-item {
 		flex-basis: 33%;
+	}
+}
+
+/* ? ----------------------- */
+/* ? Animation */
+/* ? ----------------------- */
+
+@keyframes slide-down {
+	0% {
+		transform: translateY(-1000px);
+	}
+	90% {
+		transform: translateY(25px);
+	}
+	95% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
 	}
 }
