@@ -125,7 +125,7 @@ function displayLinks() {
             <button class="btn-sm" onclick="deleteLink(${index})">Delete</button>
             <button class="btn-sm" onclick="editLink(${index})">Edit</button>
           </div>
-          <a href="${link.url}">
+          <a href="${link.url}" target="_blank">
             <h1 class="header">${link.title}</h1>
           </a>
           <p class="link-date">${formatDate(link.date)}</p>
